@@ -1,0 +1,28 @@
+{
+    "discord-webhook-url": "",
+    "server-name": "sctnightcore server",
+    "server-icon-url": "https://d2jcw5q7j4vmo4.cloudfront.net/rowqBM9comuXrAwzthrXjcpTiIQCbu_zIEH4zUl28k-A-vo--pU4kH-xarrJedTHvU4=w300",
+    "server-url": "https://github.com/sctnightcore",
+    "time-sleep": 600,
+    "true-icon": "✅",
+    "false-icon": "❌",
+    "data": [
+        {
+
+            "Name": "Login",
+            "Ip": "127.0.0.1",
+            "Port": 6900
+            
+        },
+        {
+            "Name": "Char",
+            "Ip": "127.0.0.1",
+            "Port": 5121
+        },
+        {
+            "Name": "Map",
+            "Ip": "127.0.0.1",
+            "Port": 6121
+        }
+    ]
+}
