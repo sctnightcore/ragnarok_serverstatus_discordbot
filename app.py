@@ -39,7 +39,7 @@ class Main(Config, Log):
 
         embed.set_timestamp()
         for i in post_data:
-            embed.add_embed_field(name="{} - {}".format(i['Name'], i['Port']),
+            embed.add_embed_field(name="{} - {}".format(str(i['Name']), str(i['Port'])),
                 value=self.config['true-icon'] if i['Name'] else self.config['false-icon']
             )
     
