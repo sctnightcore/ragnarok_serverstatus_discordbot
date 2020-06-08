@@ -11,18 +11,21 @@
 
             "Name": "Login",
             "Ip": "127.0.0.1",
-            "Port": 6900
+            "Port": 6900,
+            "Status": false
             
         },
         {
             "Name": "Char",
             "Ip": "127.0.0.1",
-            "Port": 5121
+            "Port": 5121,
+            "Status": false
         },
         {
             "Name": "Map",
             "Ip": "127.0.0.1",
-            "Port": 6121
+            "Port": 6121,
+            "Status": false
         }
     ]
 }

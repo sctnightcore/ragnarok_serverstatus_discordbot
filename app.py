@@ -31,6 +31,7 @@ class Main(Config, Log):
             return True
 
     def send_discord(self, post_data):
+        
         webhook = DiscordWebhook(url=self.config['discord-webhook-url'])
         
         embed = DiscordEmbed(color=242424)
@@ -38,9 +39,9 @@ class Main(Config, Log):
         embed.set_footer(text='by sctnightcore')
 
         embed.set_timestamp()
-        for i in post_data:
-            embed.add_embed_field(name="{} - {}".format(str(i['Name']), str(i['Port'])),
-                value=self.config['true-icon'] if i['Name'] else self.config['false-icon']
+        for i, items in enumerate(post_data):
+            embed.add_embed_field(name="{} - {}".format(str(items['Name']), str(items['Port'])),
+                value=self.config['true-icon'] if items['Status'] else self.config['false-icon']
             )
     
         webhook.add_embed(embed)
@@ -48,14 +49,13 @@ class Main(Config, Log):
         self.message(response)
         self.message(post_data)
         assert response != 204
-    
+
     def main_loop(self):
         while True:
-            data = {}
             for i in self.config['data']:
-                resulet = self.check_socket(i['Ip'], i['Port'])
-                data[i['Name']] = resulet
-            self.send_discord(data)
+                i['Status'] = self.check_socket(i['Ip'], i['Port'])
+                
+            self.send_discord(self.config['data'])
             time.sleep(self.config['time-sleep'])
 
 
