@@ -19,7 +19,6 @@ class Config:
 
 class Main(Config, Log):
     def __init__(self):
-        self.read_config("config.json")
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.settimeout(0.5)
 
@@ -51,6 +50,7 @@ class Main(Config, Log):
         assert response != 204
 
     def main_loop(self):
+        self.read_config("config.json")
         while True:
             for i in self.config['data']:
                 i['Status'] = self.check_socket(i['Ip'], i['Port'])
